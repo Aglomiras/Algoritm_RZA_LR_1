@@ -1,8 +1,10 @@
 package org.example;
 
-import org.example.iec61850.datatypes.logicalNode.common.LN;
-import org.example.iec61850.datatypes.logicalNode.measurement.MMXU;
-import org.example.iec61850.datatypes.logicalNode.protocol.LSVS;
+import org.example.iec61850.datatypes.logicalNodes.common.LN;
+import org.example.iec61850.datatypes.logicalNodes.hmi.NHMI;
+import org.example.iec61850.datatypes.logicalNodes.hmi.other.NHMISignal;
+import org.example.iec61850.datatypes.logicalNodes.measurement.MMXU;
+import org.example.iec61850.datatypes.logicalNodes.protocol.LSVS;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,7 +44,9 @@ public class Main {
          *
          * LSVS - узел, который подписывается на SV поток, парсит их и дает необходимые значения;
          *
-         * */
+         * Подсказка по ДЗ:
+         * - рефлекшен
+         * - фабрика*/
 
         LSVS lsvs = new LSVS();
         lsvs.setPath(path);
@@ -54,6 +58,19 @@ public class Main {
         mmxu.IaInst = lsvs.getOut().get(0);
         mmxu.IbInst = lsvs.getOut().get(1);
         mmxu.IcInst = lsvs.getOut().get(2);
+        logicalNode.add(mmxu);
+
+        NHMI nhmi = new NHMI();
+
+        nhmi.addSignals("SignalIA", new NHMISignal("ia", mmxu.IaInst.getInstMag().getF()));
+        nhmi.addSignals("SignalIB", new NHMISignal("ib", mmxu.IbInst.getInstMag().getF()));
+        nhmi.addSignals("SignalIC", new NHMISignal("ic", mmxu.IcInst.getInstMag().getF()));
+        nhmi.addSignals("SignalUA", new NHMISignal("ua", mmxu.UaInst.getInstMag().getF()));
+        nhmi.addSignals("SignalUB", new NHMISignal("ub", mmxu.UbInst.getInstMag().getF()));
+        nhmi.addSignals("SignalUC", new NHMISignal("uc", mmxu.UcInst.getInstMag().getF()));
+
+        logicalNode.add(nhmi);
+
 
         while (lsvs.hasNext()) {
             logicalNode.forEach(LN::process);

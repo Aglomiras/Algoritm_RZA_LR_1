@@ -1,6 +1,5 @@
-package org.example.iec61850.datatypes.logicalNode.common;
+package org.example.iec61850.datatypes.logicalNodes.common;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 

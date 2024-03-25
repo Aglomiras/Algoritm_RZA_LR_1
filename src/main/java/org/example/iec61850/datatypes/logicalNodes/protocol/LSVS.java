@@ -1,8 +1,8 @@
-package org.example.iec61850.datatypes.logicalNode.protocol;
+package org.example.iec61850.datatypes.logicalNodes.protocol;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.example.iec61850.datatypes.logicalNode.common.LN;
+import org.example.iec61850.datatypes.logicalNodes.common.LN;
 import org.example.iec61850.datatypes.measurements.SAV;
 
 import java.io.File;

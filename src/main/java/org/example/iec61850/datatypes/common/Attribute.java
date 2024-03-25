@@ -5,10 +5,10 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Atribute<T> {
+public class Attribute<T> {
     private T value;
 
-    public Atribute(T value) {
+    public Attribute(T value) {
         this.value = value;
     }
 }

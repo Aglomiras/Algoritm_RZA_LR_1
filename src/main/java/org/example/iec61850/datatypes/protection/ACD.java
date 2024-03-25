@@ -2,14 +2,14 @@ package org.example.iec61850.datatypes.protection;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.example.iec61850.datatypes.common.Atribute;
+import org.example.iec61850.datatypes.common.Attribute;
 
 @Getter
 @Setter
 public class ACD extends ACT {
-    private Atribute<Direction> dirgenreal = new Atribute<>(Direction.unknown);
-    private Atribute<Direction> dirphsA = new Atribute<>(Direction.unknown);
-    private Atribute<Direction> dirphsB = new Atribute<>(Direction.unknown);
-    private Atribute<Direction> dirphsC = new Atribute<>(Direction.unknown);
-    private Atribute<Direction> dirneut = new Atribute<>(Direction.unknown);
+    private Attribute<Direction> dirgenreal = new Attribute<>(Direction.unknown);
+    private Attribute<Direction> dirphsA = new Attribute<>(Direction.unknown);
+    private Attribute<Direction> dirphsB = new Attribute<>(Direction.unknown);
+    private Attribute<Direction> dirphsC = new Attribute<>(Direction.unknown);
+    private Attribute<Direction> dirneut = new Attribute<>(Direction.unknown);
 }

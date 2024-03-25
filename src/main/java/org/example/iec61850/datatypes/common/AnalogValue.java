@@ -7,6 +7,6 @@ import org.example.iec61850.datatypes.Data;
 @Getter
 @Setter
 public class AnalogValue extends Data {
-    private Atribute<Double> f = new Atribute<>(0.0);
+    private Attribute<Double> f = new Attribute<>(0.0);
 
 }

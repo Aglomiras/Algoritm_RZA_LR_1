@@ -1,8 +1,8 @@
-package org.example.iec61850.datatypes.logicalNode.protection;
+package org.example.iec61850.datatypes.logicalNodes.protection;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.example.iec61850.datatypes.logicalNode.common.LN;
+import org.example.iec61850.datatypes.logicalNodes.common.LN;
 import org.example.iec61850.datatypes.measurements.WYE;
 import org.example.iec61850.datatypes.protection.ACD;
 import org.example.iec61850.datatypes.protection.ACT;
